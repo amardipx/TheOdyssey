@@ -5,31 +5,32 @@ using namespace std;
 #define endl '\n'
 
 void solve() {
-    
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for (int i=0; i<n; i++) {
+        cin >> arr[i];
+    }
+
+    if (arr[0] == 1) cout << "YES" << endl;
+    else cout << "NO" << endl;
 }
 
 int main() {
-
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
 #ifndef ONLINE_JUDGE
-
-    if (freopen("input.txt", "r", stdin) == nullptr) {
-        cerr << "Error: Could not open input.txt" << endl;
-    }
-    if (freopen("output.txt", "w", stdout) == nullptr) {
-        cerr << "Error: Could not open output.txt" << endl;
-    }
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
 
     int t = 1;
+    cin >> t;
 
     while (t--) {
         solve();
     }
-
-    cout << flush; 
 
     return 0;
 }
