@@ -1,0 +1,20 @@
+# executables
+*.exe
+*.out
+
+# object files
+*.o
+
+# VSCode temp
+.vscode/
+
+# input/output files
+input.txt
+output.txt
+
+# binaries
+bin/
+
+# Windows
+Thumbs.db
+Desktop.ini
