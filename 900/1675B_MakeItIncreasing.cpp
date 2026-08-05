@@ -7,24 +7,22 @@ using namespace std;
 void solve() {
     int n;
     cin >> n;
-    vector<int> a(n + 2);
-    for (int i=1; i<=n; i++) cin >> a[i];
+    vector<int> a(n);
+    for (int i=0; i<n; i++) cin >> a[i];
 
-    if (n % 2 == 1) {
-        cout << "NO" << endl;
-        return;
+    int cnt = 0;
+    for (int i=n-2; i>=0; i--) {
+        while (a[i] >= a[i+1]) {
+            if (a[i] == 0) {
+                cout << -1 << endl;
+                return;
+            }
+            a[i] /= 2;
+            cnt ++;
+        }
     }
 
-    int E = INT_MIN;
-    int O = INT_MAX;
-
-    for (int i=1; i<=n; i++) {
-        if (i % 2 == 0) E = max(E, a[i]);
-        else O = min(O, a[i]);
-    }
-
-    if (O - E >= 2) cout << "YES" << endl;
-    else cout << "NO" << endl;
+    cout << cnt << endl;
 }
 
 int main() {

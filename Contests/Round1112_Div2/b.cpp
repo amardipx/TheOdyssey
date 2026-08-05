@@ -5,26 +5,26 @@ using namespace std;
 #define endl '\n'
 
 void solve() {
-    int n;
-    cin >> n;
-    vector<int> a(n + 2);
-    for (int i=1; i<=n; i++) cin >> a[i];
+    int n, k;
+    cin >> n >> k;
+    int cnt0 = k/2 + 1;
+    int cnt1 = (k+1)/2 + 1;
 
-    if (n % 2 == 1) {
-        cout << "NO" << endl;
+    if (cnt0 + cnt1 > n) {
+        cout << -1 << endl;
         return;
     }
 
-    int E = INT_MIN;
-    int O = INT_MAX;
+    for (int i=0; i<cnt0; i++) cout << 0;
+    for (int i=0; i<cnt1; i++) cout << 1;
 
-    for (int i=1; i<=n; i++) {
-        if (i % 2 == 0) E = max(E, a[i]);
-        else O = min(O, a[i]);
+    bool flag = 0;
+    for (int i=cnt0+cnt1+1; i<=n; i++) {
+        cout << flag;
+        flag = !flag;
     }
 
-    if (O - E >= 2) cout << "YES" << endl;
-    else cout << "NO" << endl;
+    cout << endl;
 }
 
 int main() {
